@@ -3,6 +3,7 @@ Simulation of a Complex Network using ciw.
 
 In this simulation we are cmputing metrics,using standard deviation,confidence interval...
 Simulation end's after computing the 95% confidence interval of the chosen metric.
+After running the ".py" file a "results.txt" is created with the results of the simulation.
 ------------------------------Section 1 System-----------------------------
 
 
