@@ -1,0 +1,219 @@
+------------------------------Section 1 System-----------------------------
+
+
+The following simulation tries to simulate the behavior of a complex network.
+The system structure consists of nine nodes. 
+Node 1 : Dispatcher of the system.
+This node is responsible for routing requests to the other eight nodes.
+The first five nodes are the slow nodes.
+The other three nodes are the fast nodes.
+Node 1 routes the requests to nodes depending on the value of the load_balancing parameter
+Algorithm RoutingDecision1 : routes the request to the least busy node.
+Algorithm RoutingDecision2 : routes the request to the least busy node, giving priority to fast nodes.
+Considering a input parameter d (integer).
+If a fast node has >d requests from a slow node so that :
+Fast_Node_Requests[i] -d > Slow_Node_Least_Busy_Requests then Dispatcher routes the request to node 'i'.
+Each simulation lasts one day.
+Routing Algorithm can be, RoutingDecision1 or RoutingDecision2 depending on the parameter load_balancing.
+------------------------------Section 2 Network Parameters-----------------------------
+
+
+The following values were given during the creation of the network in the proper fields.
+Arrival_Distributions: 
+	Dispatcher (Node 1) receives a request in exponential  distribution, with rate of 0.25 seconds
+	The other eight nodes are not receiving requests from the outer world(NoArrivals)
+Service_Distributions: 
+	Requests from Node 1 to the other nodes are being sent immediately(deterministic(0.0)).
+	Nodes 2-6(slow) are serving requests, following exponential distribution with rate of 0.125 seconds.
+	Nodes 7-9(fast) are serving requests, following exponential distribution with rate of 0.2 seconds.
+Number_Of_Servers: 
+	Each node consists of one server(number_of_servers=1).
+Queue_Capacities: 
+	Every queue on each node has infinite capacity,(Queue_Capacities=inf) 
+Routing Table: 
+	Each requests has 0% possibility to be routed to other node since routing,
+	is being configured by the Dispatcher.
+------------------------------Section 3 Output Results-----------------------------
+
+
+Parameters given : sim_time_secs=90000,d=0,load_balancing=<class '__main__.RoutingDecision1'>.
+I have confidence interval,0.03462520305191687
+For d = 0 i changed to fast node, 0 times : 
+Total Mean Waiting :2.02038966962475
+Total Mean Service :3.3683621285509155
+Total Mean Throughput :5.427566666666666
+Total Mean node 2 utilization 0.9588402262890403 
+Total Mean node 3 utilization 0.9446097114403141 
+Total Mean node 4 utilization 0.9276842392559287 
+Total Mean node 5 utilization 0.9055279127879213 
+Total Mean node 6 utilization 0.8796920893106086 
+Total Mean node 7 utilization 0.779583602257527 
+Total Mean node 8 utilization 0.7122436998159686 
+Total Mean node 9 utilization 0.6355132656773455 
+Total Mean 'all_node' utilization : 0.8429618433543319
+Confidence Interval for Mean Waiting = 1.950433267069998,2.090346072179502
+------------------------------Section 3 Output Results-----------------------------
+
+
+Parameters given : sim_time_secs=90000,d=0,load_balancing=<class '__main__.RoutingDecision2'>.
+I have confidence interval,0.021777723326546563
+For d = 0 i changed to fast node, 269885 times : 
+Total Mean Waiting :7020.081554861329
+Total Mean Service :1.841949217385923
+Total Mean Throughput :4.481940740740741
+Total Mean node 2 utilization 0.0 
+Total Mean node 3 utilization 0.0 
+Total Mean node 4 utilization 0.0 
+Total Mean node 5 utilization 0.0 
+Total Mean node 6 utilization 0.0 
+Total Mean node 7 utilization 0.999949805054562 
+Total Mean node 8 utilization 0.9999657473681737 
+Total Mean node 9 utilization 0.9999620107523216 
+Total Mean 'all_node' utilization : 0.3749846953968821
+Confidence Interval for Mean Waiting = 6867.200161029767,7172.962948692892
+------------------------------Section 3 Output Results-----------------------------
+
+
+Parameters given : sim_time_secs=90000,d=1,load_balancing=<class '__main__.RoutingDecision2'>.
+I have confidence interval,0.007209855040858356
+For d = 1 i changed to fast node, 270474 times : 
+Total Mean Waiting :7079.006696631414
+Total Mean Service :1.841210085769201
+Total Mean Throughput :4.464103703703704
+Total Mean node 2 utilization 0.00042158505558126326 
+Total Mean node 3 utilization 0.000315041912191297 
+Total Mean node 4 utilization 0.0003209568903426229 
+Total Mean node 5 utilization 0.00044270376330836255 
+Total Mean node 6 utilization 0.00023336951771715624 
+Total Mean node 7 utilization 0.9998772659594262 
+Total Mean node 8 utilization 0.9999013172711878 
+Total Mean node 9 utilization 0.999930650912045 
+Total Mean 'all_node' utilization : 0.3751803614102249
+Confidence Interval for Mean Waiting = 7027.968084515436,7130.0453087473925
+------------------------------Section 3 Output Results-----------------------------
+
+
+Parameters given : sim_time_secs=90000,d=2,load_balancing=<class '__main__.RoutingDecision2'>.
+I have confidence interval,0.049806178406966085
+For d = 2 i changed to fast node, 1112149 times : 
+Total Mean Waiting :6295.991787400785
+Total Mean Service :1.9022187580112133
+Total Mean Throughput :4.599645299145299
+Total Mean node 2 utilization 0.0431478200739218 
+Total Mean node 3 utilization 0.041230620200984065 
+Total Mean node 4 utilization 0.03897710789484936 
+Total Mean node 5 utilization 0.03614022072674134 
+Total Mean node 6 utilization 0.03277205292279976 
+Total Mean node 7 utilization 0.9922670114132768 
+Total Mean node 8 utilization 0.9939924488598114 
+Total Mean node 9 utilization 0.9958706599714602 
+Total Mean 'all_node' utilization : 0.39679974275798063
+Confidence Interval for Mean Waiting = 5982.412497188709,6609.571077612862
+------------------------------Section 3 Output Results-----------------------------
+
+
+Parameters given : sim_time_secs=90000,d=3,load_balancing=<class '__main__.RoutingDecision2'>.
+I have confidence interval,0.6884067497491515
+For d = 3 i changed to fast node, 375272 times : 
+Total Mean Waiting :934.0725272340256
+Total Mean Service :2.927409014979987
+Total Mean Throughput :5.538670760233919
+Total Mean node 2 utilization 0.6676983462819132 
+Total Mean node 3 utilization 0.636785218345596 
+Total Mean node 4 utilization 0.5989163346532359 
+Total Mean node 5 utilization 0.555328478347813 
+Total Mean node 6 utilization 0.5045816525938346 
+Total Mean node 7 utilization 0.8733731100341728 
+Total Mean node 8 utilization 0.9062598031301146 
+Total Mean node 9 utilization 0.932600644352952 
+Total Mean 'all_node' utilization : 0.7094429484674538
+Confidence Interval for Mean Waiting = 291.0506947308743,1577.094359737177
+------------------------------Section 1 System-----------------------------
+
+
+The following simulation tries to simulate the behavior a complex network.
+The system structure consists of nine nodes. 
+Node 1 : Dispatcher of the system.
+This node is responsible for routing requests to the other eight nodes.
+The first five nodes are the slow nodes.
+The other three nodes are the fast nodes.
+Node 1 routes the requests to nodes depending on the value of the load_balancing parameter
+Algorithm RoutingDecision1 : routes the request to the least busy node.
+Algorithm RoutingDecision2 : routes the request to the least busy node, giving priority to fast nodes.
+Considering a input parameter d (integer).
+If a fast node has >d requests from a slow node so that :
+Fast_Node_Requests[i] -d > Slow_Node_Least_Busy_Requests then Dispatcher routes the request to node 'i'.
+Each simulation lasts one day.
+Routing Algorithm can be, RoutingDecision1 or RoutingDecision2 depending on the parameter load_balancing.
+------------------------------Section 2 Network Parameters-----------------------------
+
+
+The following values were given during the creation of the network in the proper fields.
+Arrival_Distributions: 
+	Dispatcher (Node 1) receives a request in exponential  distribution, with rate of 0.25 seconds
+	The other eight nodes are not receiving requests from the outer world(NoArrivals)
+Service_Distributions: 
+	Requests from Node 1 to the other nodes are being sent immediately(deterministic(0.0)).
+	Nodes 2-6(slow) are serving requests, following exponential distribution with rate of 0.125 seconds.
+	Nodes 7-9(fast) are serving requests, following exponential distribution with rate of 0.2 seconds.
+Number_Of_Servers: 
+	Each node consists of one server(number_of_servers=1).
+Queue_Capacities: 
+	Every queue on each node has infinite capacity,(Queue_Capacities=inf) 
+Routing Table: 
+	Each requests has 0% possibility to be routed to other node since routing,
+	is being configured by the Dispatcher.
+------------------------------Section 3 Output Results-----------------------------
+
+
+Parameters given : sim_time_secs=90000,d=10,load_balancing=<class '__main__.RoutingDecision2'>.
+I have confidence interval,0.04268804419161451
+For d = 10 i changed to fast node, 0 times : 
+Total Mean Waiting :1.5678409635754857
+Total Mean Service :3.2145674449421175
+Total Mean Throughput :5.814472222222223
+Total Mean node 2 utilization 0.8570826472846198 
+Total Mean node 3 utilization 0.8183841762219086 
+Total Mean node 4 utilization 0.7677971632774803 
+Total Mean node 5 utilization 0.7129228646923098 
+Total Mean node 6 utilization 0.6480268589334343 
+Total Mean node 7 utilization 0.8384755133861979 
+Total Mean node 8 utilization 0.8808971618307996 
+Total Mean node 9 utilization 0.9144265474869119 
+Total Mean 'all_node' utilization : 0.8047516166392077
+Confidence Interval for Mean Waiting = 1.500912899236952,1.6347690279140195
+------------------------------Section 1 System-----------------------------
+
+
+The following simulation tries to simulate the behavior a complex network.
+The system structure consists of nine nodes. 
+Node 1 : Dispatcher of the system.
+This node is responsible for routing requests to the other eight nodes.
+The first five nodes are the slow nodes.
+The other three nodes are the fast nodes.
+Node 1 routes the requests to nodes depending on the value of the load_balancing parameter
+Algorithm RoutingDecision1 : routes the request to the least busy node.
+Algorithm RoutingDecision2 : routes the request to the least busy node, giving priority to fast nodes.
+Considering a input parameter d (integer).
+If a fast node has >d requests from a slow node so that :
+Fast_Node_Requests[i] -d > Slow_Node_Least_Busy_Requests then Dispatcher routes the request to node 'i'.
+Each simulation lasts one day.
+Routing Algorithm can be, RoutingDecision1 or RoutingDecision2 depending on the parameter load_balancing.
+------------------------------Section 2 Network Parameters-----------------------------
+
+
+The following values were given during the creation of the network in the proper fields.
+Arrival_Distributions: 
+	Dispatcher (Node 1) receives a request in exponential  distribution, with rate of 0.25 seconds
+	The other eight nodes are not receiving requests from the outer world(NoArrivals)
+Service_Distributions: 
+	Requests from Node 1 to the other nodes are being sent immediately(deterministic(0.0)).
+	Nodes 2-6(slow) are serving requests, following exponential distribution with rate of 0.125 seconds.
+	Nodes 7-9(fast) are serving requests, following exponential distribution with rate of 0.2 seconds.
+Number_Of_Servers: 
+	Each node consists of one server(number_of_servers=1).
+Queue_Capacities: 
+	Every queue on each node has infinite capacity,(Queue_Capacities=inf) 
+Routing Table: 
+	Each requests has 0% possibility to be routed to other node since routing,
+	is being configured by the Dispatcher.
